@@ -1,4 +1,4 @@
-package com.example.fingerscan;
+package com.example.fingerscan3;
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+
+import com.example.fingerscan3.R;
 
 import android.app.Activity;
 import android.app.Fragment;

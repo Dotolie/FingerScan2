@@ -1,4 +1,4 @@
-package com.example.fingerscan;
+package com.example.fingerscan3;
 /*
  * AudioVideoPlayerSample
  * Sample project to play audio and video from MPEG4 file using MediaCodec.
@@ -26,6 +26,8 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.IOException;
+
+import com.example.fingerscan3.R;
 
 import android.app.Activity;
 import android.app.Fragment;

@@ -302,7 +302,7 @@ void* fingerscan_thread(void* arg)
 }
 
 JNIEXPORT void
-Java_com_example_fingerscan_MainActivity_GpioSetDirection( JNIEnv* env,
+Java_com_example_fingerscan3_MainActivity_GpioSetDirection( JNIEnv* env,
                                                   jobject thiz, jstring port, jboolean dir )
 {
 	int gpio;
@@ -319,7 +319,7 @@ Java_com_example_fingerscan_MainActivity_GpioSetDirection( JNIEnv* env,
 }
 
 JNIEXPORT void
-Java_com_example_fingerscan_MainActivity_GpioSetValue( JNIEnv* env,
+Java_com_example_fingerscan3_MainActivity_GpioSetValue( JNIEnv* env,
                                                   jobject thiz, jstring port, jboolean value )
 {
 	int gpio;
@@ -336,7 +336,7 @@ Java_com_example_fingerscan_MainActivity_GpioSetValue( JNIEnv* env,
 }
 
 JNIEXPORT jboolean
-Java_com_example_fingerscan_MainActivity_GpioGetValue( JNIEnv* env,
+Java_com_example_fingerscan3_MainActivity_GpioGetValue( JNIEnv* env,
                                                   jobject thiz, jstring port )
 {
 	int gpio;
@@ -349,7 +349,7 @@ Java_com_example_fingerscan_MainActivity_GpioGetValue( JNIEnv* env,
 }
 
 JNIEXPORT int
-Java_com_example_fingerscan_MainActivity_fpgaStart( JNIEnv* env,
+Java_com_example_fingerscan3_MainActivity_fpgaStart( JNIEnv* env,
                                                   jobject thiz, jint freq )
 {
 	int ret;
@@ -359,14 +359,14 @@ Java_com_example_fingerscan_MainActivity_fpgaStart( JNIEnv* env,
 }
 
 JNIEXPORT int
-Java_com_example_fingerscan_MainActivity_fpgaStop( JNIEnv* env,
+Java_com_example_fingerscan3_MainActivity_fpgaStop( JNIEnv* env,
                                                   jobject thiz )
 {
 	return fpga_taskStop();
 }
 
 JNIEXPORT int
-Java_com_example_fingerscan_MainActivity_flashRead( JNIEnv* env,
+Java_com_example_fingerscan3_MainActivity_flashRead( JNIEnv* env,
                                                   jobject thiz, jstring fname )
 {
 	int ret;
@@ -383,7 +383,7 @@ Java_com_example_fingerscan_MainActivity_flashRead( JNIEnv* env,
 }
 
 JNIEXPORT int
-Java_com_example_fingerscan_MainActivity_flashUpdate( JNIEnv* env,
+Java_com_example_fingerscan3_MainActivity_flashUpdate( JNIEnv* env,
                                                   jobject thiz, jstring fname )
 {
 	int ret;
@@ -400,7 +400,7 @@ Java_com_example_fingerscan_MainActivity_flashUpdate( JNIEnv* env,
 }
 
 JNIEXPORT void
-Java_com_example_fingerscan_MainActivity_DeviceClose( JNIEnv* env,
+Java_com_example_fingerscan3_MainActivity_DeviceClose( JNIEnv* env,
                                                   jobject thiz )
 {
 	spi_dev_close();
@@ -413,7 +413,7 @@ Java_com_example_fingerscan_MainActivity_DeviceClose( JNIEnv* env,
 }
 
 JNIEXPORT jbyteArray
-Java_com_example_fingerscan_MainActivity_GetData( JNIEnv* env,
+Java_com_example_fingerscan3_MainActivity_GetData( JNIEnv* env,
                                                   jobject thiz )
 {
 	int finger_size = 80000;
@@ -431,7 +431,7 @@ Java_com_example_fingerscan_MainActivity_GetData( JNIEnv* env,
     return data;
 }
 
-JNIEXPORT void JNICALL Java_com_example_fingerscan_MainActivity_CallBackInit(JNIEnv * env, jobject obj)
+JNIEXPORT void JNICALL Java_com_example_fingerscan3_MainActivity_CallBackInit(JNIEnv * env, jobject obj)
 {		
 	LOGD("CallBackInit");
 	int status;
