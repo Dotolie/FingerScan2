@@ -8,7 +8,7 @@
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/back" />
+        android:src="@drawable/tfs_bg" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,93 +18,20 @@
         <ImageView
             android:id="@+id/ImageView01"
             android:layout_width="fill_parent"
-            android:layout_height="80dp"
+            android:layout_height="206dp"
             android:src="@drawable/ic_launcher"
             android:visibility="invisible" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" >
-
-            <ImageView
-                android:id="@+id/ImageView02"
-                android:layout_width="480dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ic_launcher"
-                android:visibility="invisible" />
-
-            <Button
-                android:id="@+id/btCapture"
-                android:layout_width="310dp"
-                android:layout_height="100dp"
-                android:text="Capture"
-                android:textSize="48sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/ImageView06"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ic_launcher"
-                android:visibility="invisible" />
-
-            <Button
-                android:id="@+id/btStartStop"
-                android:layout_width="310dp"
-                android:layout_height="100dp"
-                android:text="Start"
-                android:textSize="48sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="fill_parent"
-            android:layout_height="10dp"
-            android:src="@drawable/ic_launcher"
-            android:visibility="invisible" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <ImageView
-                android:id="@+id/ImageView03"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:src="@drawable/ic_launcher"
-                android:visibility="invisible" />
-
-            <ProgressBar
-                android:id="@+id/pbProgress"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="1080dp"
-                android:layout_height="48dp"
-                android:progress="0" />
-
-        </LinearLayout>
 
         <RelativeLayout
             android:id="@+id/RelativeLayout1"
             android:layout_width="match_parent"
-            android:layout_height="fill_parent" >
-
-            <ImageView
-                android:id="@+id/ImageView04"
-                android:layout_width="fill_parent"
-                android:layout_height="40dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:src="@drawable/ic_launcher"
-                android:visibility="invisible" />
+            android:layout_height="wrap_content" >
 
             <ImageView
                 android:id="@+id/ImageView05"
-                android:layout_width="680dp"
-                android:layout_height="fill_parent"
+                android:layout_width="757dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@+id/ImageView04"
                 android:src="@drawable/ic_launcher"
                 android:visibility="invisible" />
 
@@ -118,6 +45,87 @@
                 android:visibility="visible" />
 
         </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+            android:src="@drawable/ic_launcher"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/ImageView03"
+                android:layout_width="757dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dummy"
+                android:visibility="invisible" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="24dp" >
+
+                <ProgressBar
+                    android:id="@+id/pbProgress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="400dp"
+                    android:layout_height="24dp"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/progress_drawable" />
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="387dp"
+                    android:layout_height="24dp"
+                    android:gravity="right|center_vertical"
+                    android:text="0 sec"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#ff157efb"
+                    android:textSize="12sp" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ImageView04"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_launcher"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/ImageView02"
+                android:layout_width="811dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_launcher"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/btStartStop"
+                android:layout_width="292dp"
+                android:layout_height="65dp"
+                android:text="Start"
+                android:textColor="@drawable/text_selector"
+                android:background="@drawable/button_selector"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btCapture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Capture"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </FrameLayout>

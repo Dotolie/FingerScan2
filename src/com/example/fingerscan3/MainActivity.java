@@ -7,8 +7,6 @@ import java.io.FileOutputStream;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
-import com.example.fingerscan3.R;
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
@@ -21,10 +19,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 public class MainActivity extends Activity {
@@ -51,11 +50,16 @@ public class MainActivity extends Activity {
     byte[] imgbuffer= new byte[200 * 200];
     Handler updateHandler = new Handler();
     
+    public TextView mTvTime;
+    public long startTime;
+    public long elapsedTime;
+    
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);		
 		setContentView(R.layout.activity_main);
-
 		setViews();
 		CallBackInit();
 
@@ -113,7 +117,11 @@ public class MainActivity extends Activity {
 	            		mCount++;
 	            		mIvFinger.setImageBitmap(CreateFingerImageView(imgbuffer));
 	            		mPbProgress.setProgress(mCount*100/25);
-
+	            		elapsedTime  = (System.currentTimeMillis() - startTime)/1000;
+	            		mTvTime.setText(""+elapsedTime+" sec");
+	            		if( mCount == 23 ) {
+	            			mTvTime.setTextColor(0xffffffff);
+	            		}
 	            		if( mCount >= 25) {
 	            			FpgaStop();
 							mBtStartStop.setText("Start");
@@ -137,6 +145,8 @@ public class MainActivity extends Activity {
 				FpgaStart();
 				mBtStartStop.setText("Stop");
 				mBtCapture.setEnabled(false);
+				mTvTime.setTextColor(0xff157efb);
+	            startTime = System.currentTimeMillis();
 				break;
 			case MESSAGE_STOP_SCAN:
 				mRun = false;
@@ -179,6 +189,7 @@ public class MainActivity extends Activity {
 		});
     	mIvFinger = (ImageView)findViewById(R.id.ivFinger);
     	mPbProgress = (ProgressBar)findViewById(R.id.pbProgress);
+    	mTvTime = (TextView)findViewById(R.id.tvTime);
     }
     
 	public Bitmap CreateFingerImageView(byte[] image) {

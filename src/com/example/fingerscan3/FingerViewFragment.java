@@ -71,7 +71,7 @@ public class FingerViewFragment extends Fragment implements OnClickListener {
         Button btn4 = (Button) v.findViewById(R.id.button4);
         btn4.setOnClickListener((OnClickListener) this);
         
-        mTextView = (TextView) v.findViewById(R.id.textView1);
+        mTextView = (TextView) v.findViewById(R.id.tvTime);
     	
         //return super.onCreateView(inflater, container, savedInstanceState);
     	//return inflater.inflate(R.layout.fingerview, container, false);
